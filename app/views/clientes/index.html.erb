@@ -1,0 +1,58 @@
+  <%- model_class = Cliente -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nome) %></th>
+      <th><%= model_class.human_attribute_name(:endereco) %></th>
+      <th><%= model_class.human_attribute_name(:bairro) %></th>
+      <th><%= model_class.human_attribute_name(:cidade) %></th>
+      <th><%= model_class.human_attribute_name(:estado) %></th>
+      <th><%= model_class.human_attribute_name(:cep) %></th>
+      <th><%= model_class.human_attribute_name(:telefone) %></th>
+      <th><%= model_class.human_attribute_name(:identidade) %></th>
+      <th><%= model_class.human_attribute_name(:cpf) %></th>
+      <th><%= model_class.human_attribute_name(:nascimento) %></th>
+      <th><%= model_class.human_attribute_name(:tipo_cliente) %></th>
+      <th><%= model_class.human_attribute_name(:data_cadastro) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <tr>
+        <td><%= link_to cliente.id, cliente_path(cliente) %></td>
+        <td><%= cliente.nome %></td>
+        <td><%= cliente.endereco %></td>
+        <td><%= cliente.bairro %></td>
+        <td><%= cliente.cidade %></td>
+        <td><%= cliente.estado %></td>
+        <td><%= cliente.cep %></td>
+        <td><%= cliente.telefone %></td>
+        <td><%= cliente.identidade %></td>
+        <td><%= cliente.cpf %></td>
+        <td><%= cliente.nascimento %></td>
+        <td><%= cliente.tipo_cliente %></td>
+        <td><%= cliente.data_cadastro %></td>
+        <td><%=l cliente.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.editar")),
+                      edit_cliente_path(cliente), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.deletar")),
+                      cliente_path(cliente),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_cliente_path,
+            :class => 'btn btn-primary' %>

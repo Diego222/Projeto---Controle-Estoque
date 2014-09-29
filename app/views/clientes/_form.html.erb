@@ -1,0 +1,113 @@
+
+<%= form_for @cliente, :html => { :class => "form-horizontal cliente" } do |f| %>
+    <% if @cliente.errors.any? %>
+    <div id="error_explanation">
+    Há erros no formulário, por favor verifique.
+    </div>
+    <% end %>
+
+  
+  <div class="control-group">
+    <%= f.label :nome, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nome, :class => 'form-control' %>
+    </div>
+    <%= error_tag @cliente, :nome %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :endereco, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :endereco, :class => 'form-control' %>
+    </div>
+    <%= error_tag @cliente, :endereco %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :bairro, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bairro, :class => 'form-control' %>
+    </div>
+    <%= error_tag @cliente, :bairro %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :cidade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cidade, :class => 'form-control' %>
+    </div>
+    <%= error_tag @cliente, :cidade %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :estado, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :estado, (["", "SP", "SC", "BH"]), :class => 'form-control' %>
+    </div>
+    <%= error_tag @cliente, :estado %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :cep, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cep, class: "campo_cep form-control" %>
+    </div>
+    <%= error_tag @cliente, :cep %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :telefone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefone, class: "campo_telefone form-control" %>
+    </div>
+    <%= error_tag @cliente, :telefone %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :nascimento, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nascimento, class: "datepicker" %>
+    </div>
+    <%= error_tag @cliente, :nascimento %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :identidade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :identidade, class: "campo_identidade form-control" %>
+    </div>
+    <%= error_tag @cliente, :identidade %>
+  </div>
+
+
+  <div class="control-group">
+    <%= f.label :cpf, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cpf, class: "campo_cpf form-control" %>
+    </div>
+    <%= error_tag @cliente, :cpf %>
+  </div>
+
+ 
+
+  <div class="control-group">
+    <%= f.label :tipo_cliente, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :tipo_cliente, (["", "Cliente Preferencial", "Cliente Vip"]), :class => 'form-control' %>
+    </div>
+    <%= error_tag @cliente, :tipo_cliente %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :data_cadastro, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :data_cadastro, class: "datepicker" %>
+    </div>
+    <%= error_tag @cliente, :data_cadastro %>
+  </div>
+
+  <%= f.submit "Cadastrar", :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancelar")),
+            clientes_path, :class => 'btn btn-default' %>
+
+<% end %>
