@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require jquery.maskedinput
 //= require bootstrap-datepicker
+//= require bootstrap-select
 //= require_tree .
 
 $(document).ready(function() {
@@ -50,6 +51,9 @@ $(document).ready(function() {
 	$('.campo_ie').mask("999.999.999.999")
 });	
 
+$(document).ready(function() {
+	$('.selectpicker').selectpicker();
+});
 
 
 

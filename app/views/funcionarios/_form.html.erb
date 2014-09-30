@@ -1,0 +1,119 @@
+<%= form_for @funcionario, :html => { :class => "form-horizontal funcionario" } do |f| %>
+    <% if @funcionario.errors.any? %>
+    <div id="error_explanation">
+    Há erros no formulário, por favor verifique.
+    </div>
+    <% end %>
+
+  <div class="control-group">
+    <%= f.label :nome, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nome, :class => 'form-control' %>
+    </div>
+    <%= error_tag @funcionario, :nome %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :endereco, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :endereco, :class => 'form-control' %>
+    </div>
+    <%= error_tag @funcionario, :endereco %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :bairro, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bairro, :class => 'form-control' %>
+    </div>
+    <%= error_tag @funcionario, :bairro %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :cidade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cidade, :class => 'form-control' %>
+    </div>
+    <%= error_tag @funcionario, :cidade %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :estado, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :estado, (["", "SP", "SC", "BH"]), :class => 'form-control' %>
+    </div>
+    <%= error_tag @funcionario, :estado %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :cep, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cep, :class => 'form-control campo_cep' %>
+    </div>
+    <%= error_tag @funcionario, :cep %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :telefone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefone, :class => 'form-control campo_telefone' %>
+    </div>
+    <%= error_tag @funcionario, :telefone %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :admissao, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :admissao, :class => 'datepicker' %>
+    </div>
+    <%= error_tag @funcionario, :admissao %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :cargo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :cargo, (["", "Diretor", "Gerente", "Vendedor", "Analista"]), :class => 'form-control selectpicker' %>
+    </div>
+    <%= error_tag @funcionario, :cargo %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :salario, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :salario, :class => 'form-control' %>
+    </div>
+    <%= error_tag @funcionario, :salario %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :cpf, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cpf, :class => 'form-control campo_cpf' %>
+    </div>
+    <%= error_tag @funcionario, :cpf %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :identidade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :identidade, :class => 'form-control campo_identidade' %>
+    </div>
+    <%= error_tag @funcionario, :identidade %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :nascimento, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nascimento, :class => 'datepicker' %>
+    </div>
+    <%= error_tag @funcionario, :nascimento %>
+  </div>
+
+  
+
+
+  <%= f.submit "Cadastrar", :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancelar")),
+            funcionarios_path, :class => 'btn btn-default' %>
+
+<% end %>

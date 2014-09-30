@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929184537) do
+ActiveRecord::Schema.define(version: 20140930150036) do
 
   create_table "clientes", force: true do |t|
     t.string   "nome"
@@ -44,6 +44,24 @@ ActiveRecord::Schema.define(version: 20140929184537) do
     t.string   "inscricao_estadual"
     t.string   "data_cadastro"
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "funcionarios", force: true do |t|
+    t.string   "nome"
+    t.string   "endereco"
+    t.string   "bairro"
+    t.string   "cidade"
+    t.string   "estado"
+    t.string   "cep"
+    t.string   "telefone"
+    t.string   "admissao"
+    t.decimal  "salario",    precision: 10, scale: 0
+    t.string   "cpf"
+    t.string   "identidade"
+    t.string   "nascimento"
+    t.string   "cargo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
