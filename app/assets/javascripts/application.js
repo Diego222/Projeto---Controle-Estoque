@@ -38,6 +38,18 @@ $(document).ready(function() {
 	$('.datepicker').datepicker()
 });	
 
+$(document).ready(function() {
+	$('.campo_fax').mask("999 9999-9999")
+});	
+
+$(document).ready(function() {
+	$('.campo_cnpj').mask("99.999.999/9999-99")
+});	
+
+$(document).ready(function() {
+	$('.campo_ie').mask("999.999.999.999")
+});	
+
 
 
 

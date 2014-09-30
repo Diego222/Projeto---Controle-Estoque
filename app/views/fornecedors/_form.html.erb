@@ -1,115 +1,117 @@
 <%= form_for @fornecedor, :html => { :class => "form-horizontal fornecedor" } do |f| %>
-
     <% if @fornecedor.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@fornecedor.errors.count, "error") %> prohibited this fornecedor from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @fornecedor.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
+    <div id="error_explanation">
+    Há erros no formulário, por favor verifique.
     </div>
-  <% end %>
+    <% end %>
 
   <div class="control-group">
     <%= f.label :empresa, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :empresa, :class => 'form-control' %>
     </div>
-    <%= error_span(@fornecedor[:empresa]) %>
+    <%= error_tag @fornecedor, :empresa %>
   </div>
+
   <div class="control-group">
     <%= f.label :contato, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :contato, :class => 'form-control' %>
     </div>
-    <%= error_span(@fornecedor[:contato]) %>
+    <%= error_tag @fornecedor, :contato %>
   </div>
+
   <div class="control-group">
     <%= f.label :endereco, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :endereco, :class => 'form-control' %>
     </div>
-    <%= error_span(@fornecedor[:endereco]) %>
+    <%= error_tag @fornecedor, :endereco %>
   </div>
+
   <div class="control-group">
     <%= f.label :bairro, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :bairro, :class => 'form-control' %>
     </div>
-    <%= error_span(@fornecedor[:bairro]) %>
+    <%= error_tag @fornecedor, :bairro %>
   </div>
+
   <div class="control-group">
     <%= f.label :cidade, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :cidade, :class => 'form-control' %>
     </div>
-    <%= error_span(@fornecedor[:cidade]) %>
+    <%= error_tag @fornecedor, :cidade %>
   </div>
+
   <div class="control-group">
     <%= f.label :estado, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :estado, :class => 'form-control' %>
+      <%= f.select :estado, (["", "SP", "SC", "BH"]), :class => 'form-control' %>
     </div>
-    <%= error_span(@fornecedor[:estado]) %>
+    <%= error_tag @fornecedor, :estado %>
   </div>
+
   <div class="control-group">
     <%= f.label :cep, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :cep, :class => 'form-control' %>
+      <%= f.text_field :cep, :class => 'form-control campo_cep' %>
     </div>
-    <%= error_span(@fornecedor[:cep]) %>
+    <%= error_tag @fornecedor, :cep %>
   </div>
+
   <div class="control-group">
     <%= f.label :telefone, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :telefone, :class => 'form-control' %>
+     <%= f.text_field :telefone, class: "campo_telefone form-control" %>
     </div>
-    <%= error_span(@fornecedor[:telefone]) %>
+    <%= error_tag @fornecedor, :telefone %>
   </div>
+
   <div class="control-group">
     <%= f.label :fax, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :fax, :class => 'form-control' %>
+      <%= f.text_field :fax, :class => 'form-control campo_fax' %>
     </div>
-    <%= error_span(@fornecedor[:fax]) %>
+    <%= error_tag @fornecedor, :fax %>
   </div>
+
   <div class="control-group">
     <%= f.label :cnpj, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :cnpj, :class => 'form-control' %>
+      <%= f.text_field :cnpj, :class => 'form-control campo_cnpj' %>
     </div>
-    <%= error_span(@fornecedor[:cnpj]) %>
+    <%= error_tag @fornecedor, :cnpj %>
   </div>
+
   <div class="control-group">
     <%= f.label :inscricao_estadual, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :inscricao_estadual, :class => 'form-control' %>
+      <%= f.text_field :inscricao_estadual, :class => 'form-control campo_ie' %>
     </div>
-    <%= error_span(@fornecedor[:inscricao_estadual]) %>
+    <%= error_tag @fornecedor, :inscricao_estadual %>
   </div>
-  <div class="control-group">
-    <%= f.label :data_cadastro, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :data_cadastro, :class => 'form-control' %>
-    </div>
-    <%= error_span(@fornecedor[:data_cadastro]) %>
-  </div>
+
   <div class="control-group">
     <%= f.label :email, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :email, :class => 'form-control' %>
     </div>
-    <%= error_span(@fornecedor[:email]) %>
+    <%= error_tag @fornecedor, :email %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :data_cadastro, :class => 'control-label' %>
+    <div class="controls">
+       <%= f.text_field :data_cadastro, class: "datepicker" %>
+    </div>
+    <%= error_tag @fornecedor, :data_cadastro %>
   </div>
 
 
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <%= f.submit "Cadastrar", :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancelar")),
             fornecedors_path, :class => 'btn btn-default' %>
 
 <% end %>
