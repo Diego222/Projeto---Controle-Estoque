@@ -1,19 +1,27 @@
 require 'rails_helper'
+  feature "Novo Fornecedor" do
+    let(:fornecedor) { FactoryGirl.create(:fornecedor) }
+    scenario "New" do    
+        visit new_fornecedor_path
+        
+        click_button "Cadastrar"        
 
-	feature "Novo Fornecedor" do
-		scenario "Fornecedor" do
-		fornecedor = FactoryGirl.create(:fornecedor)
+        expect(fornecedor.empresa).to eq "S2"
+        expect(fornecedor.endereco).to eq "rua bla bla"  
 
-		visit new_fornecedor_path
-		fill_in "Empresa", with: fornecedor.empresa
-		fill_in "Endereco", with: fornecedor.endereco
-		click_button "Cadastrar"
+        #expect(page).to have_content("Joao da Silva")
+        #expect(page).to have_content("Rua ABC")
+    end
+  end
 
-		visit edit_fornecedor_path(fornecedor.id)
-		fill_in "Empresa", with: "NewEmpresa"
-		click_button "Cadastrar"
-
-		visit fornecedors_path 
-
-	end
-end
+  feature "Edit Fornecedor" do
+    let!(:fornecedor) { FactoryGirl.create(:fornecedor) }
+    scenario "Edit" do
+        visit edit_fornecedor_path(fornecedor)
+        fill_in "Empresa", with: "NewEmpresa"
+        click_button "Cadastrar"
+        
+        expect(fornecedor.reload.empresa).to eq "NewEmpresa"
+        expect(page).to have_content("NewEmpresa")
+    end    
+  end

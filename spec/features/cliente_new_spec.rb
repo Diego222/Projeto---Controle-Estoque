@@ -1,19 +1,36 @@
 require 'rails_helper'
+  feature "Novo Cliente" do
+    let(:cliente) { FactoryGirl.create(:cliente) }
+    scenario "New" do    
+        visit new_cliente_path
+        
+        click_button "Cadastrar"        
 
-	feature "Novo Cliente" do
-		scenario "Cliente" do
-		cliente = FactoryGirl.create(:cliente)
+        expect(cliente.nome).to eq "Nome"
+        expect(cliente.endereco).to eq "rua bla bla"  
 
-		visit new_cliente_path
-		fill_in "Nome", with: cliente.nome
-		fill_in "Endereco", with: cliente.endereco
-		click_button "Cadastrar"
+        #expect(page).to have_content("Nome")
+        #expect(page).to have_content("rua bla bla")
+    end
+  end
 
-		visit edit_cliente_path(cliente.id)
-		fill_in "Nome", with: "NewNome"
-		click_button "Cadastrar"
+  feature "Edit Cliente" do
+    let!(:cliente) { FactoryGirl.create(:cliente) }
+    scenario "Edit" do
+        visit edit_cliente_path(cliente)
+        fill_in "Nome", with: "NewNome"
+        click_button "Cadastrar"
+        
+        expect(cliente.reload.nome).to eq "NewNome"
+        expect(page).to have_content("NewNome")
+    end    
+  end
 
-		visit clientes_path 
-
-	end
-end
+  feature "Destroy Cliente" do
+    let(:cliente) { FactoryGirl.create(:cliente) }
+    scenario "Destroy" do
+      visit clientes_path 
+      expect{ click_link destroy(cliente.id) }.to change{Cliente.count}.by(1) # CHECK URL
+      expect(Cliente.count).to eq 0
+    end
+  end

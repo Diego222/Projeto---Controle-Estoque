@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :transportadoras
+
   resources :funcionarios
 
   resources :fornecedors

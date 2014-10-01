@@ -1,19 +1,27 @@
 require 'rails_helper'
+  feature "Novo Funcionario" do
+    let(:funcionario) { FactoryGirl.create(:funcionario) }
+    scenario "New" do    
+        visit new_funcionario_path
+        
+        click_button "Cadastrar"        
 
-	feature "Novo Funcionario" do
-		scenario "Funcionario" do
-		funcionario = FactoryGirl.create(:funcionario)
+        expect(funcionario.nome).to eq "Nome"
+        expect(funcionario.endereco).to eq "rua bla bla"  
 
-		visit new_funcionario_path
-		fill_in "Nome", with: funcionario.nome
-		fill_in "Endereco", with: funcionario.endereco
-		click_button "Cadastrar"
+        #expect(page).to have_content("Joao da Silva")
+        #expect(page).to have_content("Rua ABC")
+    end
+  end
 
-		visit edit_funcionario_path(funcionario.id)
-		fill_in "Nome", with: "NewNome"
-		click_button "Cadastrar"
-
-		visit funcionarios_path 
-
-	end
-end
+  feature "Edit Funcionario" do
+    let!(:funcionario) { FactoryGirl.create(:funcionario) }
+    scenario "Edit" do
+        visit edit_funcionario_path(funcionario)
+        fill_in "Nome", with: "NewNome"
+        click_button "Cadastrar"
+        
+        expect(funcionario.reload.nome).to eq "NewNome"
+        expect(page).to have_content("NewNome")
+    end    
+  end
