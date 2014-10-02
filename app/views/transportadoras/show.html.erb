@@ -20,12 +20,12 @@
   <dd><%= @transportadora.inscricao_estadual %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
+<%= link_to t('.back', :default => t("helpers.links.voltar")),
               transportadoras_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
+<%= link_to t('.edit', :default => t("helpers.links.editar")),
               edit_transportadora_path(@transportadora), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+<%= link_to t('.destroy', :default => t("helpers.links.excluir")),
               transportadora_path(@transportadora),
               :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirmar", :default => 'Você tem certeza?')) },
               :class => 'btn btn-danger' %>

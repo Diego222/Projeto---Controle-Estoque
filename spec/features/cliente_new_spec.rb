@@ -27,10 +27,11 @@ require 'rails_helper'
   end
 
   feature "Destroy Cliente" do
+    binding.pry
     let(:cliente) { FactoryGirl.create(:cliente) }
     scenario "Destroy" do
       visit clientes_path 
-      expect{ click_link destroy(cliente.id) }.to change{Cliente.count}.by(1) # CHECK URL
+      expect{ click_link destroy(cliente.id) }#.to change{Cliente.count}.by(1) # CHECK URL
       expect(Cliente.count).to eq 0
     end
   end

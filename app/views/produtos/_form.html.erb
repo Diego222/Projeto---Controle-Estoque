@@ -1,0 +1,77 @@
+<%= form_for @produto, :html => { :class => "form-horizontal produto" } do |f| %>
+    <% if @produto.errors.any? %>
+    <div id="error_explanation">
+    Há erros no formulário, por favor verifique.
+    </div>
+    <% end %>
+
+  <div class="control-group">
+    <%= f.label :descricao_produto, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :descricao_produto, :class => 'form-control' %>
+    </div>
+    <%= error_tag @produto, :descricao_produto %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :tipo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :tipo, (["", "Tecido", "Cola"]), :class => 'form-control' %>
+    </div>
+    <%= error_tag @produto, :tipo %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :fornecedor_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fornecedor_id, :class => 'form-control' %>
+    </div>
+    <%= error_tag @produto, :fornecedor_id %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :fabricante, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fabricante, :class => 'form-control' %>
+    </div>
+    <%= error_tag @produto, :fabricante %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :preco_custo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :preco_custo, :class => 'form-control' %>
+    </div>
+    <%= error_tag @produto, :preco_custo %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :preco_venda, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :preco_venda, :class => 'form-control' %>
+    </div>
+    <%= error_tag @produto, :preco_venda %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :data_ultimo_reajuste, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :data_ultimo_reajuste, :class => 'form-control' %>
+    </div>
+    <%= error_tag @produto, :data_ultimo_reajuste %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :avatar, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :avatar, :class => 'form-control' %>
+    </div>
+    <%= error_tag @produto, :avatar %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            produtos_path, :class => 'btn btn-default' %>
+
+<% end %>

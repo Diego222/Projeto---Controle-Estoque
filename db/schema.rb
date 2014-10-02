@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001130332) do
+ActiveRecord::Schema.define(version: 20141002202944) do
 
   create_table "clientes", force: true do |t|
     t.string   "nome"
@@ -65,6 +65,24 @@ ActiveRecord::Schema.define(version: 20141001130332) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "produtos", force: true do |t|
+    t.string   "descricao_produto"
+    t.string   "tipo"
+    t.integer  "fornecedor_id"
+    t.string   "fabricante"
+    t.string   "preco_custo"
+    t.string   "preco_venda"
+    t.string   "data_ultimo_reajuste"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  add_index "produtos", ["fornecedor_id"], name: "index_produtos_on_fornecedor_id", using: :btree
 
   create_table "transportadoras", force: true do |t|
     t.string   "nome"

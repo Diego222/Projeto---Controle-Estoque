@@ -1,6 +1,6 @@
 <%- model_class = Transportadora -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Lista de Transportadoras</h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -13,8 +13,7 @@
       <th><%= model_class.human_attribute_name(:telefone) %></th>
       <th><%= model_class.human_attribute_name(:cnpj) %></th>
       <th><%= model_class.human_attribute_name(:inscricao_estadual) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%=t '.actions', :default => t("helpers.ações") %></th>
     </tr>
   </thead>
   <tbody>
@@ -28,14 +27,13 @@
         <td><%= transportadora.telefone %></td>
         <td><%= transportadora.cnpj %></td>
         <td><%= transportadora.inscricao_estadual %></td>
-        <td><%=l transportadora.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to t('.edit', :default => t("helpers.links.editar")),
                       edit_transportadora_path(transportadora), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t('.destroy', :default => t("helpers.links.excluir")),
                       transportadora_path(transportadora),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirmar", :default => 'Você tem certeza?')) },
                       :class => 'btn btn-xs btn-danger' %>
         </td>
       </tr>
@@ -43,6 +41,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', :default => t("helpers.links.novo")),
             new_transportadora_path,
             :class => 'btn btn-primary' %>

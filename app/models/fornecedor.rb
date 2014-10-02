@@ -1,5 +1,7 @@
 class Fornecedor < ActiveRecord::Base
 
+	has_many :produtos
+
 	validates_presence_of :empresa, :contato, :endereco, :bairro, :cidade, :estado,
 	:data_cadastro, :message => "Campo obrigatório"
 	#validates_length_of :nome, :endereco, :bairro, :cidade, :in => 7..32, :message=> "Campo deve conter no mínimo 7 dígitos e no máximo 50"
