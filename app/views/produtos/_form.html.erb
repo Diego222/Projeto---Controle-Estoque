@@ -22,9 +22,17 @@
   </div>
 
   <div class="control-group">
+    <%= f.label :quantidade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :quantidade, :class => 'form-control' %>
+    </div>
+    <%= error_tag @produto, :quantidade %>
+  </div>
+
+  <div class="control-group">
     <%= f.label :fornecedor_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :fornecedor_id, :class => 'form-control' %>
+      <%= f.collection_select(:fornecedor_id, Fornecedor.order(:empresa), :id, :empresa) %>
     </div>
     <%= error_tag @produto, :fornecedor_id %>
   </div>
@@ -56,7 +64,7 @@
   <div class="control-group">
     <%= f.label :data_ultimo_reajuste, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :data_ultimo_reajuste, :class => 'form-control' %>
+      <%= f.text_field :data_ultimo_reajuste, :class => 'datepicker' %>
     </div>
     <%= error_tag @produto, :data_ultimo_reajuste %>
   </div>
@@ -64,14 +72,14 @@
   <div class="control-group">
     <%= f.label :avatar, :class => 'control-label' %>
     <div class="controls">
-      <%= f.file_field :avatar, :class => 'form-control' %>
+      <%= f.file_field :avatar %>
     </div>
     <%= error_tag @produto, :avatar %>
   </div>
 
 
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <%= f.submit "Cadastrar", :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancelar")),
             produtos_path, :class => 'btn btn-default' %>
 
 <% end %>

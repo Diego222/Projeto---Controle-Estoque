@@ -27,7 +27,6 @@ require 'rails_helper'
   end
 
   feature "Destroy Cliente" do
-    binding.pry
     let(:cliente) { FactoryGirl.create(:cliente) }
     scenario "Destroy" do
       visit clientes_path 

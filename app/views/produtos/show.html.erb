@@ -8,8 +8,10 @@
   <dd><%= @produto.descricao_produto %></dd>
   <dt><strong><%= model_class.human_attribute_name(:tipo) %>:</strong></dt>
   <dd><%= @produto.tipo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:quantidade) %>:</strong></dt>
+  <dd><%= @produto.quantidade %></dd>
   <dt><strong><%= model_class.human_attribute_name(:fornecedor_id) %>:</strong></dt>
-  <dd><%= @produto.fornecedor_id %></dd>
+  <dd><%= @produto.fornecedor.empresa %></dd>
   <dt><strong><%= model_class.human_attribute_name(:fabricante) %>:</strong></dt>
   <dd><%= @produto.fabricante %></dd>
   <dt><strong><%= model_class.human_attribute_name(:preco_custo) %>:</strong></dt>

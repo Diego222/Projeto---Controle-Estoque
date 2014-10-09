@@ -7,6 +7,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:descricao_produto) %></th>
       <th><%= model_class.human_attribute_name(:tipo) %></th>
+      <th><%= model_class.human_attribute_name(:quantidade) %></th>
       <th><%= model_class.human_attribute_name(:fornecedor_id) %></th>
       <th><%= model_class.human_attribute_name(:fabricante) %></th>
       <th><%= model_class.human_attribute_name(:preco_custo) %></th>
@@ -21,7 +22,8 @@
         <td><%= link_to produto.id, produto_path(produto) %></td>
         <td><%= produto.descricao_produto %></td>
         <td><%= produto.tipo %></td>
-        <td><%= produto.fornecedor_id %></td>
+        <td><%= produto.quantidade %></td>
+        <td><%= produto.fornecedor.empresa%></td>
         <td><%= produto.fabricante %></td>
         <td><%= produto.preco_custo %></td>
         <td><%= produto.preco_venda %></td>

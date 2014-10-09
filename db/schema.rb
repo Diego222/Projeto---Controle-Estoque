@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002202944) do
+ActiveRecord::Schema.define(version: 20141007152722) do
 
   create_table "clientes", force: true do |t|
     t.string   "nome"
@@ -71,8 +71,6 @@ ActiveRecord::Schema.define(version: 20141002202944) do
     t.string   "tipo"
     t.integer  "fornecedor_id"
     t.string   "fabricante"
-    t.string   "preco_custo"
-    t.string   "preco_venda"
     t.string   "data_ultimo_reajuste"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -80,6 +78,9 @@ ActiveRecord::Schema.define(version: 20141002202944) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.float    "quantidade",           limit: 24
+    t.decimal  "preco_custo",                     precision: 10, scale: 0
+    t.decimal  "preco_venda",                     precision: 10, scale: 0
   end
 
   add_index "produtos", ["fornecedor_id"], name: "index_produtos_on_fornecedor_id", using: :btree
