@@ -1,6 +1,7 @@
 class Fornecedor < ActiveRecord::Base
 
 	has_many :produtos#, dependent: :destroy
+	has_many :pedidos
 
 	validates_presence_of :empresa, :contato, :endereco, :bairro, :cidade, :estado,
 	:data_cadastro, :message => "Campo obrigatório"

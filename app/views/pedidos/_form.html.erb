@@ -1,0 +1,53 @@
+<%= form_for @pedido, :html => { :class => "form-horizontal pedido" } do |f| %>
+    <% if @pedido.errors.any? %>
+    <div id="error_explanation">
+    Há erros no formulário, por favor verifique.
+    </div>
+    <% end %>
+
+  <div class="control-group">
+    <%= f.label :fornecedor_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:fornecedor_id, Fornecedor.order(:empresa), :id, :empresa) %>
+    </div>
+    <%= error_tag @pedido, :fornecedor_id %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :data, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :data, :class => 'datepicker' %>
+    </div>
+    <%= error_tag @pedido, :data %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'form-control' %>
+    </div>
+    <%= error_tag @pedido, :email %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :pedido, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :pedido, :class => 'form-control' %>
+    </div>
+    <%= error_tag @pedido, :pedido %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :observacoes, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :observacoes, :class => 'form-control' %>
+    </div>
+    <%= error_tag @pedido, :observacoes %>
+  </div>
+
+
+  <%= f.submit 'Enviar', :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancelar")),
+            pedidos_path, :class => 'btn btn-default' %>
+
+<% end %>

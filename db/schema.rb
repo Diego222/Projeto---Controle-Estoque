@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141007152722) do
+ActiveRecord::Schema.define(version: 20141009134855) do
 
   create_table "clientes", force: true do |t|
     t.string   "nome"
@@ -65,6 +65,18 @@ ActiveRecord::Schema.define(version: 20141007152722) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "pedidos", force: true do |t|
+    t.integer  "fornecedor_id"
+    t.string   "data"
+    t.text     "pedido"
+    t.text     "observacoes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
+  end
+
+  add_index "pedidos", ["fornecedor_id"], name: "index_pedidos_on_fornecedor_id", using: :btree
 
   create_table "produtos", force: true do |t|
     t.string   "descricao_produto"
