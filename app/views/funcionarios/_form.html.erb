@@ -38,9 +38,9 @@
   </div>
 
   <div class="control-group">
-    <%= f.label :estado, :class => 'control-label' %>
+    <%= f.label :estado, :class => 'control-label' %> 
     <div class="controls">
-      <%= f.select :estado, (["", "SP", "SC", "BH"]), :class => 'form-control' %>
+      <%= f.select(:estado, (['', 'SP','MG', 'SC']), {}, :class => 'form-control' ) %>
     </div>
     <%= error_tag @funcionario, :estado %>
   </div>
@@ -72,7 +72,7 @@
   <div class="control-group">
     <%= f.label :cargo, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :cargo, (["", "Diretor", "Gerente", "Vendedor", "Analista"]), :class => 'form-control selectpicker' %>
+      <%= f.select :cargo, (["", "Diretor", "Gerente", "Vendedor", "Analista"]), {}, :class => 'form-control' %>
     </div>
     <%= error_tag @funcionario, :cargo %>
   </div>

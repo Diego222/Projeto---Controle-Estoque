@@ -13,10 +13,18 @@
     <%= error_tag @produto, :descricao_produto %>
   </div>
 
-  <div class="control-group">
-    <%= f.label :tipo, :class => 'control-label' %>
+   <div class="control-group">
+    <%= f.label :data_ultimo_reajuste, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :tipo, (["", "Tecido", "Cola"]), :class => 'form-control' %>
+      <%= f.text_field :data_ultimo_reajuste, :class => 'datepicker' %>
+    </div>
+    <%= error_tag @produto, :data_ultimo_reajuste %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :tipo, :class => 'control-label' %> 
+    <div class="controls">
+      <%= f.select(:tipo, (['', 'Cola','Tecido', 'Grampo']), {}, :class => 'form-control' ) %>
     </div>
     <%= error_tag @produto, :tipo %>
   </div>
@@ -32,7 +40,7 @@
   <div class="control-group">
     <%= f.label :fornecedor_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.collection_select(:fornecedor_id, Fornecedor.order(:empresa), :id, :empresa) %>
+      <%= f.collection_select(:fornecedor_id, Fornecedor.order(:empresa), :id, :empresa, {}, :class => 'form-control' ) %>
     </div>
     <%= error_tag @produto, :fornecedor_id %>
   </div>
@@ -59,14 +67,6 @@
       <%= f.text_field :preco_venda, :class => 'form-control' %>
     </div>
     <%= error_tag @produto, :preco_venda %>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :data_ultimo_reajuste, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :data_ultimo_reajuste, :class => 'datepicker' %>
-    </div>
-    <%= error_tag @produto, :data_ultimo_reajuste %>
   </div>
 
   <div class="control-group">

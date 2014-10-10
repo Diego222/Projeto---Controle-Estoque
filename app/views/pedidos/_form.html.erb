@@ -8,7 +8,7 @@
   <div class="control-group">
     <%= f.label :fornecedor_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.collection_select(:fornecedor_id, Fornecedor.order(:empresa), :id, :empresa) %>
+      <%= f.collection_select(:fornecedor_id, Fornecedor.order(:empresa), :id, :empresa, {}, :class => 'form-control' ) %>
     </div>
     <%= error_tag @pedido, :fornecedor_id %>
   </div>

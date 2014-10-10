@@ -40,9 +40,9 @@
   </div>
 
   <div class="control-group">
-    <%= f.label :estado, :class => 'control-label' %>
+    <%= f.label :estado, :class => 'control-label' %> 
     <div class="controls">
-      <%= f.select :estado, (["", "SP", "SC", "BH"]), :class => 'form-control' %>
+      <%= f.select(:estado, (['', 'SP','MG', 'SC']), {}, :class => 'form-control' ) %>
     </div>
     <%= error_tag @cliente, :estado %>
   </div>
@@ -78,7 +78,6 @@
     </div>
     <%= error_tag @cliente, :identidade %>
   </div>
-
 
   <div class="control-group">
     <%= f.label :cpf, :class => 'control-label' %>

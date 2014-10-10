@@ -25,4 +25,8 @@ class Fornecedor < ActiveRecord::Base
 	#validates_size_of :identidade, is: 12, :message => "Deve ter 9 dígitos"
 	validates_uniqueness_of :inscricao_estadual, :message => "Inscrição estadual já cadastrada"
 
+	#Email
+	validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{3,})\z/i, on: :create, :message => "Email inválido" }
+	
+
 end

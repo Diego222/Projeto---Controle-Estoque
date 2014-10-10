@@ -11,7 +11,7 @@ FactoryGirl.define do
 		fax { '111 1111-1111' }
 		cnpj { '11.111.111/1111-11' }
 		inscricao_estadual { '111.111.111.111' }
-		email { 'ffff' }
+		email { 'diguinhu222@hotmail.com' }
 		data_cadastro { '08/23/1990' }
 	end
 end
