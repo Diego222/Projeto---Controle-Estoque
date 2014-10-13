@@ -50,7 +50,7 @@
   <div class="control-group">
     <%= f.label :cep, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :cep, class: "campo_cep form-control" %>
+      <%= f.text_field :cep, class: "campo_cep form-control", :placeholder => "99.999-999" %>
     </div>
     <%= error_tag @cliente, :cep %>
   </div>
@@ -58,7 +58,7 @@
   <div class="control-group">
     <%= f.label :telefone, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :telefone, class: "campo_telefone form-control" %>
+      <%= f.text_field :telefone, class: "campo_telefone form-control", :placeholder => "(99) 9999-9999" %>
     </div>
     <%= error_tag @cliente, :telefone %>
   </div>
@@ -66,7 +66,7 @@
   <div class="control-group">
     <%= f.label :nascimento, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :nascimento, class: "datepicker" %>
+      <%= f.text_field :nascimento, class: "datepicker", :placeholder => "10/10/2022" %>
     </div>
     <%= error_tag @cliente, :nascimento %>
   </div>
@@ -74,7 +74,7 @@
   <div class="control-group">
     <%= f.label :identidade, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :identidade, class: "campo_identidade form-control" %>
+      <%= f.text_field :identidade, class: "campo_identidade form-control", :placeholder => "99.999.999.9" %>
     </div>
     <%= error_tag @cliente, :identidade %>
   </div>
@@ -82,17 +82,15 @@
   <div class="control-group">
     <%= f.label :cpf, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :cpf, class: "campo_cpf form-control" %>
+      <%= f.text_field :cpf, class: "campo_cpf form-control", :placeholder => "999.999.999-99" %>
     </div>
     <%= error_tag @cliente, :cpf %>
   </div>
 
- 
-
   <div class="control-group">
     <%= f.label :tipo_cliente, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :tipo_cliente, (["", "Cliente Preferencial", "Cliente Vip"]), :class => 'form-control' %>
+      <%= f.select :tipo_cliente, (["", "Preferencial", "Vip"]), {}, :class => 'form-control' %>
     </div>
     <%= error_tag @cliente, :tipo_cliente %>
   </div>
@@ -100,7 +98,7 @@
   <div class="control-group">
     <%= f.label :data_cadastro, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :data_cadastro, class: "datepicker" %>
+      <%= f.text_field :data_cadastro, class: "datepicker", :placeholder => "10/10/2022" %>
     </div>
     <%= error_tag @cliente, :data_cadastro %>
   </div>

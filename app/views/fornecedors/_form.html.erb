@@ -57,7 +57,7 @@
   <div class="control-group">
     <%= f.label :cep, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :cep, :class => 'form-control campo_cep' %>
+      <%= f.text_field :cep, :class => 'form-control campo_cep', :placeholder => "99.999-999" %>
     </div>
     <%= error_tag @fornecedor, :cep %>
   </div>
@@ -65,7 +65,7 @@
   <div class="control-group">
     <%= f.label :telefone, :class => 'control-label' %>
     <div class="controls">
-     <%= f.text_field :telefone, class: "campo_telefone form-control" %>
+     <%= f.text_field :telefone, class: "campo_telefone form-control", :placeholder => "(99) 9999-9999" %>
     </div>
     <%= error_tag @fornecedor, :telefone %>
   </div>
@@ -73,7 +73,7 @@
   <div class="control-group">
     <%= f.label :fax, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :fax, :class => 'form-control campo_fax' %>
+      <%= f.text_field :fax, :class => 'form-control campo_fax', :placeholder => "999 9999-9999" %>
     </div>
     <%= error_tag @fornecedor, :fax %>
   </div>
@@ -81,7 +81,7 @@
   <div class="control-group">
     <%= f.label :cnpj, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :cnpj, :class => 'form-control campo_cnpj' %>
+      <%= f.text_field :cnpj, :class => 'form-control campo_cnpj', :placeholder => "99.999.999/9999-99" %>
     </div>
     <%= error_tag @fornecedor, :cnpj %>
   </div>
@@ -89,7 +89,7 @@
   <div class="control-group">
     <%= f.label :inscricao_estadual, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :inscricao_estadual, :class => 'form-control campo_ie' %>
+      <%= f.text_field :inscricao_estadual, :class => 'form-control campo_ie', :placeholder => "999.999.999.999" %>
     </div>
     <%= error_tag @fornecedor, :inscricao_estadual %>
   </div>
@@ -97,7 +97,7 @@
   <div class="control-group">
     <%= f.label :email, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :email, :class => 'form-control' %>
+      <%= f.text_field :email, :class => 'form-control', :placeholder => "example@example.com" %>
     </div>
     <%= error_tag @fornecedor, :email %>
   </div>
@@ -105,7 +105,7 @@
   <div class="control-group">
     <%= f.label :data_cadastro, :class => 'control-label' %>
     <div class="controls">
-       <%= f.text_field :data_cadastro, class: "datepicker" %>
+       <%= f.text_field :data_cadastro, class: "datepicker", :placeholder => "10/10/2022" %>
     </div>
     <%= error_tag @fornecedor, :data_cadastro %>
   </div>

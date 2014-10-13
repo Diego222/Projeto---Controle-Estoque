@@ -55,5 +55,11 @@ $(document).ready(function() {
 	$('.selectpicker').selectpicker();
 });
 
+$(document).ready(function() {
+	$(".file").filestyle({input: false});
+});
+
+$(":file").filestyle({input: false});
+
 
 

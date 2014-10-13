@@ -48,7 +48,7 @@
   <div class="control-group">
     <%= f.label :cep, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :cep, :class => 'form-control campo_cep' %>
+      <%= f.text_field :cep, :class => 'form-control campo_cep', :placeholder => "99.999-999" %>
     </div>
     <%= error_tag @funcionario, :cep %>
   </div>
@@ -56,7 +56,7 @@
   <div class="control-group">
     <%= f.label :telefone, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :telefone, :class => 'form-control campo_telefone' %>
+      <%= f.text_field :telefone, :class => 'form-control campo_telefone', :placeholder => "(99) 9999-9999" %>
     </div>
     <%= error_tag @funcionario, :telefone %>
   </div>
@@ -64,7 +64,7 @@
   <div class="control-group">
     <%= f.label :admissao, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :admissao, :class => 'datepicker' %>
+      <%= f.text_field :admissao, :class => 'datepicker', :placeholder => "10/10/2022" %>
     </div>
     <%= error_tag @funcionario, :admissao %>
   </div>
@@ -80,7 +80,7 @@
   <div class="control-group">
     <%= f.label :salario, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :salario, :class => 'form-control' %>
+      <%= f.text_field :salario, :class => 'form-control', :placeholder => "R$ 100,00" %>
     </div>
     <%= error_tag @funcionario, :salario %>
   </div>
@@ -88,7 +88,7 @@
   <div class="control-group">
     <%= f.label :cpf, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :cpf, :class => 'form-control campo_cpf' %>
+      <%= f.text_field :cpf, :class => 'form-control campo_cpf', :placeholder => "999.999.999-99" %>
     </div>
     <%= error_tag @funcionario, :cpf %>
   </div>
@@ -96,7 +96,7 @@
   <div class="control-group">
     <%= f.label :identidade, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :identidade, :class => 'form-control campo_identidade' %>
+      <%= f.text_field :identidade, :class => 'form-control campo_identidade', :placeholder => "99.999.999.9" %>
     </div>
     <%= error_tag @funcionario, :identidade %>
   </div>
@@ -104,7 +104,7 @@
   <div class="control-group">
     <%= f.label :nascimento, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :nascimento, :class => 'datepicker' %>
+      <%= f.text_field :nascimento, :class => 'datepicker', :placeholder => "10/10/2022" %>
     </div>
     <%= error_tag @funcionario, :nascimento %>
   </div>
