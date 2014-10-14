@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :usuarios
   resources :pedidos
 
   resources :produtos
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root :to => "clientes#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
