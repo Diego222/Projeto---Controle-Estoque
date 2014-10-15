@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :usuarios
+
+  resources :homes
+
+ 
   resources :pedidos
 
   resources :produtos
@@ -13,11 +16,26 @@ Rails.application.routes.draw do
   resources :clientes
   #match '/cliente_path' => 'cliente#destroy', :via => :delete
 
+  
+
+ devise_for :usuarios
+  devise_scope :usuario do
+  authenticated :usuario do
+    root 'clientes#index', as: :authenticated_root
+  end
+
+  unauthenticated do
+    root 'devise/sessions#new', as: :unauthenticated_root
+  end
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root :to => "clientes#index"
+   
+  #root :to => "homes#index"
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
