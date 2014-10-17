@@ -53,7 +53,9 @@
 
 <%= link_to t('.new', :default => t("helpers.links.novo")),
             new_cliente_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-primary' %><br>    
+  <%= paginate  @clientes %>
+
 
 
 <html>
