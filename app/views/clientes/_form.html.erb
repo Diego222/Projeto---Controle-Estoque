@@ -6,14 +6,13 @@
     </div>
     <% end %>
 
-  
   <div class="control-group">
     <%= f.label :nome, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :nome, :class => 'form-control' %>
     </div>
     <%= error_tag @cliente, :nome %>
-  </div>
+  </div>                          
 
   <div class="control-group">
     <%= f.label :endereco, :class => 'control-label' %>
@@ -39,7 +38,7 @@
     <%= error_tag @cliente, :cidade %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :estado, :class => 'control-label' %> 
     <div class="controls">
       <%= f.select(:estado, (['', 'SP','MG', 'SC']), {}, :class => 'form-control' ) %>
@@ -47,7 +46,7 @@
     <%= error_tag @cliente, :estado %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :cep, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :cep, class: "campo_cep form-control", :placeholder => "99.999-999" %>
@@ -55,7 +54,7 @@
     <%= error_tag @cliente, :cep %>
   </div>
 
-  <div class="control-group">
+  <div class="input-group">
     <%= f.label :telefone, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :telefone, class: "campo_telefone form-control", :placeholder => "(99) 9999-9999" %>
@@ -79,7 +78,7 @@
     <%= error_tag @cliente, :nascimento %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :identidade, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :identidade, class: "campo_identidade form-control", :placeholder => "99.999.999.9" %>
@@ -87,7 +86,7 @@
     <%= error_tag @cliente, :identidade %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :cpf, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :cpf, class: "campo_cpf form-control", :placeholder => "999.999.999-99" %>
@@ -95,7 +94,7 @@
     <%= error_tag @cliente, :cpf %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :tipo_cliente, :class => 'control-label' %>
     <div class="controls">
       <%= f.select :tipo_cliente, (["", "Preferencial", "Vip"]), {}, :class => 'form-control' %>

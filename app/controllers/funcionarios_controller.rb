@@ -5,7 +5,7 @@ class FuncionariosController < ApplicationController
   # GET /funcionarios
   # GET /funcionarios.json
   def index
-    @funcionarios = Funcionario.all
+    @funcionarios = Funcionario.all.page(params['page'])
   end
 
   # GET /funcionarios/1

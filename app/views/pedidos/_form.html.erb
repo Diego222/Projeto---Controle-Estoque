@@ -5,7 +5,7 @@
     </div>
     <% end %>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :fornecedor_id, :class => 'control-label' %>
     <div class="controls">
       <%= f.collection_select(:fornecedor_id, Fornecedor.order(:empresa), :id, :empresa, {}, :class => 'form-control' ) %>
@@ -31,22 +31,20 @@
   </div>
 
   <div class="control-group">
-    <b>Pedido</b>
-    <% f.label :pedido, :class => 'control-label' %>
+    <%= f.label :pedido, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :pedido, :class => 'form-control' %>
     </div>
     <%= error_tag @pedido, :pedido %>
   </div>
 
-  <div class="control-group">
-     <b>Observações</b>
-    <% f.label :observacoes, :class => 'control-label' %>
+  <div class="control-group"> 
+    <%= f.label :observacoes, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :observacoes, :class => 'form-control' %>
+      <%= f.text_area :observacoes, :class => 'form-control' %>
     </div>
     <%= error_tag @pedido, :observacoes %>
-  </div>
+  </div><br>
 
 
   <%= f.submit 'Enviar', :class => 'btn btn-primary' %>

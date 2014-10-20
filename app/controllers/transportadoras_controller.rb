@@ -5,7 +5,7 @@ class TransportadorasController < ApplicationController
   # GET /transportadoras
   # GET /transportadoras.json
   def index
-    @transportadoras = Transportadora.all
+    @transportadoras = Transportadora.all.page(params['page'])
   end
 
   # GET /transportadoras/1

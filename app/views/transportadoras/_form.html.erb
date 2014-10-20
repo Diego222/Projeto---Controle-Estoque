@@ -29,7 +29,7 @@
     <%= error_tag @transportadora, :cidade %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :estado, :class => 'control-label' %> 
     <div class="controls">
       <%= f.select(:estado, (['', 'SP','MG', 'SC']), {}, :class => 'form-control' ) %>
@@ -37,7 +37,7 @@
     <%= error_tag @transportadora, :estado %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :telefone, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :telefone, :class => 'form-control campo_telefone', :placeholder => "(99) 9999-9999" %>
@@ -45,7 +45,7 @@
     <%= error_tag @transportadora, :telefone %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :cnpj, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :cnpj, :class => 'form-control campo_cnpj', :placeholder => "99.999.999/9999-99" %>
@@ -53,7 +53,7 @@
     <%= error_tag @transportadora, :cnpj %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :inscricao_estadual, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :inscricao_estadual, :class => 'form-control campo_ie', :placeholder => "999.999.999.999" %>

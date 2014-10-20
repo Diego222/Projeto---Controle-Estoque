@@ -12,4 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-select
+ *= require datepicker
+ *= require login
+ *= require social
+ *= require home
  */

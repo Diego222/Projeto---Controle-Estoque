@@ -22,4 +22,5 @@ class Funcionario < ActiveRecord::Base
 	#validates_size_of :cpf, is: 14, :message => "Deve ter 11 dígitos"
 	validates_uniqueness_of :cpf, :message => "Cpf já cadastrado"
 
+	paginates_per 2
 end

@@ -37,7 +37,7 @@
     <%= error_tag @funcionario, :cidade %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :estado, :class => 'control-label' %> 
     <div class="controls">
       <%= f.select(:estado, (['', 'SP','MG', 'SC']), {}, :class => 'form-control' ) %>
@@ -45,7 +45,7 @@
     <%= error_tag @funcionario, :estado %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :cep, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :cep, :class => 'form-control campo_cep', :placeholder => "99.999-999" %>
@@ -53,7 +53,7 @@
     <%= error_tag @funcionario, :cep %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :telefone, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :telefone, :class => 'form-control campo_telefone', :placeholder => "(99) 9999-9999" %>
@@ -69,7 +69,7 @@
     <%= error_tag @funcionario, :admissao %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :cargo, :class => 'control-label' %>
     <div class="controls">
       <%= f.select :cargo, (["", "Diretor", "Gerente", "Vendedor", "Analista"]), {}, :class => 'form-control' %>
@@ -77,7 +77,7 @@
     <%= error_tag @funcionario, :cargo %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :salario, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :salario, :class => 'form-control', :placeholder => "R$ 100,00" %>
@@ -85,7 +85,7 @@
     <%= error_tag @funcionario, :salario %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :cpf, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :cpf, :class => 'form-control campo_cpf', :placeholder => "999.999.999-99" %>
@@ -93,7 +93,7 @@
     <%= error_tag @funcionario, :cpf %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :identidade, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :identidade, :class => 'form-control campo_identidade', :placeholder => "99.999.999.9" %>

@@ -46,15 +46,15 @@
   </div>
 
   
-   <div class="control-group">
+    <div class="input-group">
     <%= f.label :estado, :class => 'control-label' %> 
-    <div class="controls">
+    <div class="selectpicker">
       <%= f.select(:estado, (['', 'SP','MG', 'SC']), {}, :class => 'form-control' ) %>
     </div>
     <%= error_tag @fornecedor, :estado %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :cep, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :cep, :class => 'form-control campo_cep', :placeholder => "99.999-999" %>
@@ -62,7 +62,7 @@
     <%= error_tag @fornecedor, :cep %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :telefone, :class => 'control-label' %>
     <div class="controls">
      <%= f.text_field :telefone, class: "campo_telefone form-control", :placeholder => "(99) 9999-9999" %>
@@ -70,7 +70,7 @@
     <%= error_tag @fornecedor, :telefone %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :fax, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :fax, :class => 'form-control campo_fax', :placeholder => "999 9999-9999" %>
@@ -78,7 +78,7 @@
     <%= error_tag @fornecedor, :fax %>
   </div>
 
-  <div class="control-group">
+   <div class="input-group">
     <%= f.label :cnpj, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :cnpj, :class => 'form-control campo_cnpj', :placeholder => "99.999.999/9999-99" %>
@@ -86,7 +86,7 @@
     <%= error_tag @fornecedor, :cnpj %>
   </div>
 
-  <div class="control-group">
+  <div class="input-group">
     <%= f.label :inscricao_estadual, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :inscricao_estadual, :class => 'form-control campo_ie', :placeholder => "999.999.999.999" %>
@@ -114,5 +114,6 @@
   <%= f.submit "Cadastrar", :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancelar")),
             fornecedors_path, :class => 'btn btn-default' %>
+              
 
 <% end %>

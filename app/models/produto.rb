@@ -7,4 +7,6 @@ class Produto < ActiveRecord::Base
   validates_presence_of :descricao_produto, :tipo, :fornecedor, :quantidade, :fabricante, :preco_custo, :preco_venda,
 	:data_ultimo_reajuste, :message => "Campo obrigatório"
 
+	paginates_per 2
+
 end

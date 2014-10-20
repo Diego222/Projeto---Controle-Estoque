@@ -5,7 +5,7 @@ class FornecedorsController < ApplicationController
   # GET /fornecedors
   # GET /fornecedors.json
   def index
-    @fornecedors = Fornecedor.all
+    @fornecedors = Fornecedor.all.page(params['page'])
   end
 
   # GET /fornecedors/1

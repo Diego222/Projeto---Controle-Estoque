@@ -5,7 +5,7 @@ class PedidosController < ApplicationController
   # GET /pedidos
   # GET /pedidos.json
   def index
-    @pedidos = Pedido.all
+    @pedidos = Pedido.all.page(params['page'])
   end
 
   # GET /pedidos/1
